@@ -1,0 +1,133 @@
+<!-- for fee menu Btn and CSS-->
+<div class="feeContainer" id="wrapper">
+    <nav id="nav">
+        <div id="head">
+            <div>FEE</div>
+        </div>
+        <a aria-current="page" href="/feeWhiteBoard"><i class="fa-solid fa-clipboard-list"></i>Whiteboard</a>
+        <a aria-current="page" href="/feeDataSheet"><i class="fa-solid fa-database"></i>Material Datasheets</a>
+        <a aria-current="page" href="/feeJobLibrary"><i class="fa-solid fa-book-open"></i>Job Library</a>
+        <a aria-current="page" href="/feeEngineeringPro"><i class="fa-solid fa-microchip"></i>Engineering Procedures</a>
+        <a aria-current="page" href="/feePresentation"><i class="fa-solid fa-person-chalkboard"></i>Presentation & Articles</a>
+        <a aria-current="page" href="/feeJobSearch"><i class="fa-solid fa-magnifying-glass"></i>Job Search</a>
+        <a style="color: #081974" id="customerProfile" aria-current="page" href="/feeProfile"><i class="fa-solid fa-address-card"></i>Customer Profiles</a>
+    </nav>
+    <div class="addCustomer">
+        <% if(typeof username == 'string' && username && id == null) { %>
+            <button id="addBtn">Add Customer</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><b>Customer List</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%if (customers.length > 0) { %>
+                        <% customers.forEach(function(row){ %>
+                    <tr>
+                        <td><a href="/feeProfile/<%=row._id %>"><%= row.customerName %></a></td>
+                    </tr> 
+                    <% })} else { %>
+                        <tr>
+                            <td>No Customer Profile available</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <%} else {%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><b>Customer List</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%if (customers.length > 0) { %>
+                        <% customers.forEach(function(row){ %>
+                    <tr>
+                        <td><a href="/feeProfile/<%=row._id %>"><%= row.customerName %></a></td>
+                    </tr> 
+                    <% })} else { %>
+                        <tr>
+                            <td>No Customer Profile available</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <% } %>
+    </div>
+
+    <div class="customerContent" id="toDisplay" style="display: none;" onclick="toDisplay">
+
+        <h2>New Customer Information</h2>
+        
+            <form action="/feeProfile" method="POST" enctype="multipart/form-data" class="form-control">
+                <div class="labels">
+                    <label for="customerName">Customer Name: </label>
+                    <input type="text" placeholder=" Customer Name" id="customerName" name="customerName">
+                    <div class="infoContainer">
+                        <label for="genDesc">General: </label>
+                        <textarea name="genDesc" id="genDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="salesDesc">Sales: </label>
+                        <textarea name="salesDesc" id="salesDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="camDesc">CAM/Product Engineering: </label>
+                        <textarea name="camDesc" id="camDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="drillDesc">Drill/Rout: </label>
+                        <textarea name="drillDesc" id="drillDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="processDesc">Process: </label>
+                        <textarea name="processDesc" id="processDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="solderDesc">Soldermask/Silkscreen: </label>
+                        <textarea name="solderDesc" id="solderDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="processEngDesc">Process Engineering: </label>
+                        <textarea name="processEngDesc" id="processEngDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="assemblyDesc">Assembly: </label>
+                        <textarea name="assemblyDesc" id="assemblyDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="qualityDesc">Quality: </label>
+                        <textarea name="qualityDesc" id="qualityDesc"></textarea>
+                    </div>
+
+                    <div class="infoContainer">
+                        <label for="packDesc">Pack & Ship: </label>
+                        <textarea name="packDesc" id="packDesc"></textarea>
+                    </div><br>
+
+                    <div class="mb-3">   
+                        <input type="file" id="myFile" name="myFile">
+                    </div><br>
+
+                    <div id="saveAndcancelBtn">
+                        <div>
+                        <button type="submit">Save</button>
+                        <input type="button" onclick="history.go()" value="Cancel">
+                        </div>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+

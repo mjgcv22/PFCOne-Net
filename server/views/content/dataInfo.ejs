@@ -1,0 +1,43 @@
+<div class="feeContainer">
+    <nav id="nav">
+        <div id="head">
+            <div>FEE</div>
+        </div>
+        <a aria-current="page" href="/feeWhiteBoard"><i class="fa-solid fa-clipboard-list"></i>Whiteboard</a>
+        <a style="color: #081974; background-color: #eeeeee;" aria-current="page" href="/feeDataSheet"><i class="fa-solid fa-database"></i>Material Datasheets</a>
+        <a aria-current="page" href="/feeJobLibrary"><i class="fa-solid fa-book-open"></i>Job Library</a>
+        <a aria-current="page" href="/feeEngineeringPro"><i class="fa-solid fa-microchip"></i>Engineering Procedures</a>
+        <a aria-current="page" href="/feePresentation"><i class="fa-solid fa-person-chalkboard"></i>Presentation & Articles</a>
+        <a aria-current="page" href="/feeJobSearch"><i class="fa-solid fa-magnifying-glass"></i>Job Search</a>
+        <a aria-current="page" href="/feeProfile"><i class="fa-solid fa-address-card"></i>Customer Profiles</a>
+    </nav>
+
+    <% if (id != null && id){ %>
+        <div class="customerContent" id="toShow">
+    
+            <h2>Datasheet information</h2>
+            <div>
+                <h4>Name</h4>
+                <p><%=datasheets.name %></p> 
+            </div>
+            <div>
+                <h4>Description</h4>
+                <p><%=datasheets.description %></p>
+            </div>
+            <div>
+                <h4>Attachment</h4>
+                <% for (var i=0; i < files.length; i++) { %>
+                    <% if (files[i].name == datasheets.myFile) { %>
+                <a href="<%= files[i].url %>"><%= files[i].name %></a>
+                    <% } %>
+                <% } %>
+            </div>
+
+            <br/>
+            <div>
+                <a href="/feeDataSheet" class="btn btn-danger btn-sm">Back</a>
+            </div>
+            
+        </div>
+    <% } %>
+</div>

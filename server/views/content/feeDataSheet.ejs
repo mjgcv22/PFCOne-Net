@@ -1,0 +1,84 @@
+<div class="feeContainer">
+    <nav id="nav">
+        <div id="head">
+            <div>FEE</div>
+        </div>
+        <a aria-current="page" href="/feeWhiteBoard"><i class="fa-solid fa-clipboard-list"></i>Whiteboard</a>
+        <a style="color: #081974; background-color: #eeeeee;" aria-current="page" href="/feeDataSheet"><i class="fa-solid fa-database"></i>Material Datasheets</a>
+        <a aria-current="page" href="/feeJobLibrary"><i class="fa-solid fa-book-open"></i>Job Library</a>
+        <a aria-current="page" href="/feeEngineeringPro"><i class="fa-solid fa-microchip"></i>Engineering Procedures</a>
+        <a aria-current="page" href="/feePresentation"><i class="fa-solid fa-person-chalkboard"></i>Presentation & Articles</a>
+        <a aria-current="page" href="/feeJobSearch"><i class="fa-solid fa-magnifying-glass"></i>Job Search</a>
+        <a aria-current="page" href="/feeProfile"><i class="fa-solid fa-address-card"></i>Customer Profiles</a>
+    </nav>
+    <div class="addDatasheet">
+        <% if(typeof username == 'string' && username && id == null) { %>
+            <button id="addBtn">Add Datasheets</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><b>Datasheets</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%if (datasheets.length > 0) { %>
+                        <% datasheets.forEach(function(row){ %>
+                        <tr>
+                            <td><a href="/feeDataSheet/<%=row._id %>"><%= row.name %></a></td>
+                        </tr> 
+                        <% })} else { %>
+                            <tr>
+                                <td>No Datasheet available</td>
+                            </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <%} else {%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><b>Datasheets</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%if (datasheets.length > 0) { %>
+                        <% datasheets.forEach(function(row){ %>
+                        <tr>
+                            <td><a href="/feeDataSheet/<%=row._id %>"><%= row.name %></a></td>
+                        </tr> 
+                        <% })} else { %>
+                            <tr>
+                                <td>No Datasheet available</td>
+                            </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <% } %>
+
+    </div>
+
+    <div class="datasheetContent" id="toDisplay" style="display: none;" onclick="toDisplay">
+        <h2>New DataSheet Information</h2>
+        <form action="" method="POST" enctype="multipart/form-data" class="form-control">
+            <div>
+                <label for="datasheetName"> Datasheet Name: </label>
+                <input type="text" name="name" id="name" placeholder="Datasheet Name">
+                <p></p>
+            </div>
+            <div class="infoContainer">
+                <textarea name="description" id="description"></textarea>
+            </div>
+
+            <div class="mb-3">   
+                <input type="file" id="myFile" name="myFile">
+            </div><br>
+
+            <div id="saveAndcancelBtn">
+                <div>
+                    <button type="submit">Save</button>
+                    <input type="button" onclick="history.go()" value="Cancel">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

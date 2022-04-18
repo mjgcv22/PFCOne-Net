@@ -1,0 +1,83 @@
+/* Log in CSS */
+/* Log in container */
+.login {    
+    width: 400px;      
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+  }
+
+  /* holder for image or h1 */
+  .login h1 {
+    text-align: center;
+    color: #5b6574;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+  }
+  .login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  /* Form label for icons */
+  .login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;    
+    background-color: #081974;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  /* textboxes for username and password  */
+  .login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;    
+  }
+
+  /* button for Login */
+  .login form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #081974;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  }
+  .login form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+  }
+
+  /* button for Cancel */
+  .login form input[type="cancel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #c96f25;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    text-align: center;
+  }
+  .login form input[type="cancel"]:hover {
+    background-color: #ee7b1d;
+      transition: background-color 0.2s;
+    }
+form label i{
+      margin-right: 0;
+      text-align: center;
+    }

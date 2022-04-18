@@ -1,0 +1,47 @@
+@import "./css/reset.css";
+@import "./css/fee.css";
+@import "./css/feeProfile.css";
+@import "./css/feeDataSheet.css";
+@import "./css/login.css";
+
+
+html, body{
+  height: 100%; 
+} 
+
+.navbar-nav > li{
+    padding-left:15px;
+    padding-right:15px;
+  }
+.nav-item  a{
+  color: white;
+}
+.nav-item >a:hover {
+  color: rgb(212, 153, 43);
+ }
+.navbar-brand{
+  font-size: 10pt;
+  color: white;
+}
+footer{
+  color:white;
+  position: absolute;
+}
+.nav-text{
+  color:white;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top: 10px;
+}
+/* .clear{
+  /* clear:both;
+  height:60px; 
+  background-color: blueviolet;
+} */
+.container1{
+  height: 100%;
+}
+/* 
+.feeContainer{
+  height: 100%;
+} */

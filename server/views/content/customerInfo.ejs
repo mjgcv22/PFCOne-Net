@@ -1,0 +1,78 @@
+<div class="feeContainer" id="wrapper">
+    <nav id="nav">
+        <div id="head">
+            <div>FEE</div>
+        </div>
+        <a aria-current="page" href="/feeWhiteBoard"><i class="fa-solid fa-clipboard-list"></i>Whiteboard</a>
+        <a aria-current="page" href="/feeDataSheet"><i class="fa-solid fa-database"></i>Material Datasheets</a>
+        <a aria-current="page" href="/feeJobLibrary"><i class="fa-solid fa-book-open"></i>Job Library</a>
+        <a aria-current="page" href="/feeEngineeringPro"><i class="fa-solid fa-microchip"></i>Engineering Procedures</a>
+        <a aria-current="page" href="/feePresentation"><i class="fa-solid fa-person-chalkboard"></i>Presentation & Articles</a>
+        <a aria-current="page" href="/feeJobSearch"><i class="fa-solid fa-magnifying-glass"></i>Job Search</a>
+        <a style="color: #081974" id="customerProfile" aria-current="page" href="/feeProfile"><i class="fa-solid fa-address-card"></i>Customer Profiles</a>
+    </nav>
+    
+    <% if(id != null && id){ %>
+        <div class="customerContent">
+            
+            <h2>Customer Information</h2>
+            <div>
+                <h4>Customer Name</h4>
+                <p><b><%=customers.customerName %></b></p>
+            </div>
+            <div>
+                <h4>General</h4>
+                <p><%=customers.genDesc %></p>
+            </div>
+            <div>
+                <h4>Sales</h4>
+                <p><%=customers.salesDesc%></p> 
+            </div>
+            <div>
+                <h4>CAM/Product Engineering</h4>
+                <p><%=customers.camDesc %></p>
+            </div>
+            <div>
+                <h4>Drill/Rout</h4>
+                <p><%=customers.drillDesc %></p>
+            </div>
+            <div>
+                <h4>Process</h4>
+                <p><%=customers.processDesc %></p>
+            </div>
+            <div>
+                <h4>Soldermask/Silkscreen</h4>
+                <p><%=customers.solderDesc %></p>
+            </div>
+            <div>
+                <h4>Process Engineering</h4>
+                <p><%=customers.processEngDesc %></p>
+            </div>
+            <div>
+                <h4>Assembly</h4>
+                <p><%=customers.assemblyDesc %></p>
+            </div>
+            <div>
+                <h4>Quality</h4>
+                <p><%=customers.qualityDesc %></p>
+            </div>
+            <div>
+                <h4>Pack & Ship</h4>
+                <p><%=customers.packDesc %></p>
+            </div>
+            <div>
+                <h4>Attachment</h4>
+                <% for (var i=0; i < files.length; i++) { %>
+                    <% if (files[i].name == customers.myFile) { %>
+                <a href="<%= files[i].url %>"><%= files[i].name %></a>
+                    <% } %>
+                <% } %>
+            </div>    
+            </br>
+            <div>
+                <a href="/feeProfile" class="btn btn-danger btn-sm">Back</a>
+            </div>
+           
+        </div>
+    <% } %>
+</div>
